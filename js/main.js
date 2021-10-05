@@ -1,3 +1,5 @@
+const LODGING_OFFERS = 10;
+
 const getRandomInt = (min, max) => {
   if (min < 0 || max < 0) {
     return -1;
@@ -19,54 +21,65 @@ const getRandomArbitrary = (min, max) => {
 
 getRandomArbitrary(7, 50);
 
-
-const author = () => {
-  const i = Math.round(Math.random() * (10 - 1) + 1);
-  const avatar =  `img/avatars/user${  i  }.png`;
+const lodging = {
+  avatar: 'img/avatars/user'{'getRandomInt(0, 10)'}'.png',
+  title: 'Жилье',
+  address: '{{'getRandomArbitrary' (lat: 35.65000, lng: 139.70000)}}', '{{'getRandomArbitrary' (lat: 139.70000, lng: 139.80000)}}',
+  price: (0, 100),
+  type: [
+    'palace',
+    'flat',
+    'house',
+    'bungalow',
+    'hotel',
+  ],
+  rooms: [
+    getRandomInt(0, 2),
+  ],
+  guests: [
+    getRandomInt(0, 6),
+  ],
+  checkin: [
+    '12:00',
+    '13:00',
+    '14:00',
+  ],
+  checkout: [
+    '12:00',
+    '13:00',
+    '14:00',
+  ],
+  features: [
+    'wifi',
+    'dishwasher',
+    'parking',
+    'washer',
+    'elevator',
+    'conditioner',
+  ],
+  description: [
+    'Опишите ваше жильё',
+  ],
+  photos: [
+    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
+    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
+    'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
+  ],
 };
 
-const STRINGS = [
-  'title',
-  'address',
-  'type',
-  'checkin',
-  'checkout',
-  'features',
-  'description',
-  'photos',
-];
+const createLodging = () => ({
+  avatar: lodging.avatar,
+  title: lodging.title,
+  address: lodging.address,
+  price: lodging.price,
+  type: lodging.type,
+  rooms: lodging.rooms,
+  guests: lodging.guests,
+  checking: lodging.checking,
+  checkout: lodging.checkout,
+  features: lodging.features,
+  description: lodging.description,
+  photos: lodging.photos,
+});
 
-const NUMBERS = [
-  'price',
-  'rooms',
-  'guests',
-];
-
-const moreDetails = () => {
-  const randomStringIndex = _.random(0, STRINGS.length - 1);
-  const randomNumberIndex = _.random(0, NUMBERS.length - 1);
-
-  return {
-    string: STRINGS[randomStringIndex],
-    number: NUMBERS[randomNumberIndex],
-  };
-};
-
-console.log(
-  moreDetails(),
-);
-
-const generalDetails = Array.from({length: 10});
-
-console.log(generalDetails);
-
-const map = () => {
-  const location = {
-    width: {
-      lat: 35.65000, lng: 139.70000,
-    },
-    height: {
-      lat: 139.70000, lng: 139.80000,
-    },
-  };
-};
+const arrayLodging = Array.from({length: LODGING_OFFERS});
