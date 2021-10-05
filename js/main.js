@@ -22,7 +22,7 @@ getRandomArbitrary(7, 50);
 
 const author = () => {
   const i = Math.round(Math.random() * (10 - 1) + 1);
-  const avatar =  "img/avatars/user" + i + ".png"
+  const avatar =  `img/avatars/user${  i  }.png`;
 };
 
 const STRINGS = [
@@ -34,7 +34,7 @@ const STRINGS = [
   'features',
   'description',
   'photos',
-]
+];
 
 const NUMBERS = [
   'price',
@@ -53,8 +53,12 @@ const moreDetails = () => {
 };
 
 console.log(
-  moreDetails()
+  moreDetails(),
 );
+
+const generalDetails = Array.from({length: 10});
+
+console.log(generalDetails);
 
 const map = () => {
   const location = {
@@ -63,6 +67,6 @@ const map = () => {
     },
     height: {
       lat: 139.70000, lng: 139.80000,
-    }
-  }
+    },
+  };
 };
